@@ -3,8 +3,7 @@ import { save, load } from "redux-localstorage-simple";
 import reducer from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(
-	save({ states: ['credentials'] }),
-    
+	save({ states: ['credentials'] })
 )(createStore);
 
 const store = createStoreWithMiddleware(
