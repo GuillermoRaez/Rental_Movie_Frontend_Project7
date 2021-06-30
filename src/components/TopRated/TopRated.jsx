@@ -33,26 +33,23 @@ const TopRated = (props) => {
     return <div>cargando</div>;
   } else {
     return (
-         <div>
-             <h3 id="titleScroll">Top Rated Movies</h3>
-      <div className="scrolling-wrapper">
-        {moviesTopRate?.map((TopRate) => {
-          return (
-            <Card className="card" key={TopRate.id}cover={
-                <img
-                  className="imgMovie"
-                  src={`${baseImgUrl}/${size}${TopRate.poster_path}`}
-                  alt="poster_path"
-                />
-              }
-            >
-            </Card>
-          );
-        })}
+      <div className="vistaHome">
+      <div className="tarjeta">
+      {moviesTopRate.map((movie, index) => (
+     
+      <div key={index} className="appointmentCard1">
+
+      <img src={`${baseImgUrl}/${size}${movie.poster_path}`}  alt="poster"/>
+
+      <p> Movie: {movie.title} </p>
+      <p> Rated : {movie.vote_average} </p>
+      <p> Id : {movie.id} </p>
       </div>
+      ))}
       </div>
-    );
-  }
-};
+  </div>
+)
+}
+}
 
 export default TopRated;

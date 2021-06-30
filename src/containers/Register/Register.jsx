@@ -62,6 +62,7 @@ const Register = () => {
         <Navbar/>
         <div className="vistaRegister">
             <div className="form">
+            <h2>Create Account</h2>
                 <label>Firstname:</label>
                 <input className="inputBaseone" type="text" name="firstname" 
                 onChange={updateFormulario} placeholder="Firstname"></input>

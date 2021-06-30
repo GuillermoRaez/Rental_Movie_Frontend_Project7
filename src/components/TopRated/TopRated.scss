@@ -43,3 +43,14 @@
 
 }
 
+.tarjeta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.appointmentCard {
+  display: flex;
+  flex-direction: row;
+}
+
