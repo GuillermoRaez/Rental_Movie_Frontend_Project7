@@ -3,6 +3,8 @@ import {NavLink} from 'react-router-dom';
 import { LOGOUT } from '../../redux/types'
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = (props) => {
 
@@ -49,7 +51,13 @@ const Navbar = (props) => {
         <div className="space"></div>
         <div className="NavMenu">
             <div className="NavLink">
-              <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} onClick={()=>logOut()} to="/">Logout</NavLink>
+              <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/profile"><img src={<FontAwesomeIcon icon={faUser}/>}></img></NavLink>
+            </div>
+            <div className="NavLink">
+              <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/order">Order</NavLink>
+            </div>
+            <div className="NavLink">
+            <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} onClick={()=>logOut()} to="/" id="logout">Logout</NavLink>
             </div>
         </div>
       </div>

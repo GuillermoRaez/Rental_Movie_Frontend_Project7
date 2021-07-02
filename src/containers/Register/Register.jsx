@@ -61,11 +61,15 @@ const Register = () => {
     <div>
         <Navbar/>
         <div className="vistaRegister">
-            <div className="form">
-            <h2>Create Account</h2>
+            <div className="container">
+                <div className="header">
+                <h2>Create Account</h2>
+                </div>
+            <div className="form" id="form">
                 <label>Firstname:</label>
                 <input className="inputBaseone" type="text" name="firstname" 
                 onChange={updateFormulario} placeholder="Firstname"></input>
+                <i className="fas fa-check-circle"></i>
                 <label>Lastname:</label>
                 <input className="inputBaseone" type="text" name="lastname" 
                 onChange={updateFormulario} placeholder="Lastname"></input>
@@ -86,7 +90,9 @@ const Register = () => {
                 onChange={updateFormulario} placeholder="Password"></input>
     
     
+                
                 <div className="sendButton" onClick={()=>ejecutaRegistro()}>Enviar</div>
+            </div>
             </div>
         </div>
     </div>

@@ -8,7 +8,6 @@ const Profile = () => {
         <Navbar/>
         <div className="vistaProfile">
             <Userdata/>
-            Estamos en Profile
         </div>
     </div>
     )

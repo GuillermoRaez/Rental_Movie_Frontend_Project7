@@ -19,7 +19,7 @@ const Popular = (props) => {
   const findPopular = async () => {
     try {
       let res = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=210d6a5dd3f16419ce349c9f1b200d6d&language=en-US&page=1"
+        "http://localhost:3001/movies/popular"
       );
       setMoviesPopular(res.data.results);
       console.log(res.data.results);

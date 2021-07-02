@@ -15,7 +15,7 @@
 
     .card {
       display: inline-block;
-      background-color: rgb(54, 53, 53);
+      background-color: $secondary;
       width: 15em;
       border:solid 1em transparent;
       &:hover{
@@ -40,6 +40,9 @@
 
 #titleScroll{
   color: rgb(246, 237, 218);
+  margin: 2em 0 1em 2em;
+
+  font-size: 1.5em;
 
 }
 
