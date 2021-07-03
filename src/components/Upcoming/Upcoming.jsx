@@ -3,8 +3,8 @@ import axios from "axios";
 import { Card } from "antd";
 const { Meta } = Card;
 
-const TopRated = (props) => {
-  const [moviesTopRate, setMoviesTopRate] = useState([]);
+const Upcoming = (props) => {
+  const [moviesUpcoming, setMoviesUpcoming] = useState([]);
 
   
   const baseImgUrl = "https://image.tmdb.org/t/p";
@@ -12,36 +12,36 @@ const TopRated = (props) => {
 
   useEffect(() => {
     setTimeout(() => {
-      findTopRated();
+      findUpcoming();
     }, 500);
   }, []);
 
-  const findTopRated = async () => {
+  const findUpcoming = async () => {
     try {
       let res = await axios.get(
-        "http://localhost:3001/movies/toprated"
+        "http://localhost:3001/movies/upcoming"
       );
-      setMoviesTopRate(res.data.results);
+      setMoviesUpcoming(res.data.results);
       console.log(res.data.results);
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(setMoviesTopRate);
+  console.log(setMoviesUpcoming);
 
-  if (moviesTopRate === "") {
-    return <div>cargando</div>;
+  if (moviesUpcoming === "") {
+    return <div>Loading</div>;
   } else {
     return (
       <div>
-          <h3 id="titleScroll">Top Rated Movies</h3>
+          <h3 id="titleScroll">Upcoming Movies</h3>
    <div className="scrolling-wrapper">
-     {moviesTopRate?.map((Pop) => {
+     {moviesUpcoming?.map((Up) => {
        return (
-         <Card className="card" key={Pop.id}cover={
+         <Card className="card" key={Up.id}cover={
              <img
                className="imgMovie"
-               src={`${baseImgUrl}/${size}${Pop.poster_path}`}
+               src={`${baseImgUrl}/${size}${Up.poster_path}`}
                alt="poster_path"
              />
            }
@@ -55,4 +55,4 @@ const TopRated = (props) => {
 }
 };
 
-export default TopRated;
+export default Upcoming
