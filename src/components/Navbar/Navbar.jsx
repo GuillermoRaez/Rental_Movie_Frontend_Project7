@@ -10,11 +10,6 @@ const Navbar = (props) => {
 
   let history = useHistory();
 
-
-  // const takeMe = (where) => {
-  //   history.push(where);
-  // }
-
   const logOut = () => {
     props.dispatch({ type: LOGOUT });
 
@@ -42,7 +37,7 @@ const Navbar = (props) => {
       </div>
     )
 
-  } else {
+  } else if(props.credentials?.user.isAdmin === true) {
     return (
       <div className="nav">
          <div className="NavLink">
@@ -56,12 +51,19 @@ const Navbar = (props) => {
             <div className="NavLink">
               <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/order">Order</NavLink>
             </div>
+            <div>
+              <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/users">Users</NavLink>
+            </div>
             <div className="NavLink">
             <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} onClick={()=>logOut()} to="/" id="logout">Logout</NavLink>
             </div>
         </div>
       </div>
         )
+} else {
+  return (
+    <div>Aqui pasa algo que no huele bien!</div>
+  )
 }
 
 

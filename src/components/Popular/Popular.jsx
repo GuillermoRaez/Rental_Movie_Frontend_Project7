@@ -3,6 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router";
 import { Card } from "antd";
 import { MOVIE } from "../../redux/types";
+import { connect } from "react-redux";
 const { Meta } = Card;
 
 
@@ -19,7 +20,7 @@ const Popular = (props) => {
   useEffect(() => {
     setTimeout(() => {
       findPopular();
-    }, 500);
+    }, 250);
   }, []);
 
   const findPopular = async () => {
@@ -28,6 +29,8 @@ const Popular = (props) => {
         "http://localhost:3001/movies/popular"
       );
       setMoviesPopular(res.data.results);
+
+      props.dispatch({ type: MOVIE, payload: res.data.results});
       console.log(res.data.results);
     } catch (error) {
       console.log(error);
@@ -36,10 +39,11 @@ const Popular = (props) => {
 
   console.log(setMoviesPopular);
 
-  const getFilmInfo = (film) => {
+  const getInfo = (film) => {
     props.dispatch({ type: MOVIE, payload: film });
+    console.log(film);
 
-    history.push("/movieInfo");
+    history.push("/movie");
   }
 
   if (moviesPopular === "") {
@@ -49,14 +53,14 @@ const Popular = (props) => {
          <div>
              <h3 id="titleScroll">Popular Movies</h3>
       <div className="scrolling-wrapper">
-        {moviesPopular?.map((Pop) => {
+        {moviesPopular?.map((Pop, index) => {
           return (
             <Card className="card" key={Pop.id}cover={
                 <img
                   className="imgMovie"
                   src={`${baseImgUrl}/${size}${Pop.poster_path}`}
                   alt="poster_path"
-                  onClick={getFilmInfo}
+                  onClick={()=> getInfo(Pop)}
                 />
               }
             >
@@ -69,4 +73,7 @@ const Popular = (props) => {
   }
 };
 
-export default Popular
+export default connect((state) => ({
+  credentials:state.credentials,
+  movie:state.movies
+}))(Popular);

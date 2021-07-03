@@ -8,4 +8,8 @@
 @import 'components/TopRated/TopRated.scss';
 @import 'components/Popular/Popular.scss';
 @import 'containers/Order/Order.scss';
-@import 'components/Upcoming/Upcoming.scss'
+@import 'components/Upcoming/Upcoming.scss';
+
+.App {
+    background-color: $secondary;
+}

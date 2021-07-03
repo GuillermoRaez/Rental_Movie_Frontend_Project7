@@ -13,7 +13,7 @@ const Upcoming = (props) => {
   useEffect(() => {
     setTimeout(() => {
       findUpcoming();
-    }, 500);
+    }, 250);
   }, []);
 
   const findUpcoming = async () => {

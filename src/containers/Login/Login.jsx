@@ -18,33 +18,33 @@ const Login = (props) => {
        setCredentials({...credentials,[e.target.name]: e.target.value})
    }
 
-//    const checkError = async (arg) => {
+   const checkError = async (arg) => {
 
-//     switch (arg){
+    switch (arg){
 
-//         case 'email':
+        case 'email':
 
-//             if (credentials.email.length < 1){
-//                 setMensajeError({...msgError, eEmail: "Please enter your email"});
-//             }else {
-//                 setMensajeError({...msgError, eEmail: ""});
-//             }
+            if (credentials.email.length < 1){
+                setMensajeError({...msgError, eEmail: "Please enter your email"});
+            }else {
+                setMensajeError({...msgError, eEmail: ""});
+            }
 
-//         break;
+        break;
 
-//         case 'password':
+        case 'password':
 
-//             if (credentials.password.length < 1){
-//                 setMensajeError({...msgError, ePassword: "Please enter your password"});
-//             }else {
-//                 setMensajeError({...msgError, ePassword: ""});
-//             }
-//         break;
+            if (credentials.password.length < 1){
+                setMensajeError({...msgError, ePassword: "Please enter your password"});
+            }else {
+                setMensajeError({...msgError, ePassword: ""});
+            }
+        break;
 
-//         default:
-//             break;
-//     }
-// }
+        default:
+            break;
+    }
+}
 
 
    const logMe = async () => {
@@ -83,17 +83,14 @@ const Login = (props) => {
         }
 
     return (
-    <div>
-        <Navbar/>
         <div className="vistaLogin">
                 <label>Email:</label>
-                <input className="inputBase"  type='email' name='email' title='email' placeholder="Email" onChange={updateCredentials}  length='30'/>
+                <input className="inputBase"  type='email' name='email' title='email' placeholder="Email" onBlur={checkError} onChange={updateCredentials}  length='30'/>
                 <label>Password:</label>
-                <input className="inputBase"  type='password'  name='password' title='password' placeholder="Password" onChange={updateCredentials}  length='30'/>
+                <input className="inputBase"  type='password'  name='password' title='password' placeholder="Password" onBlur={checkError} onChange={updateCredentials}  length='30'/>
                 <div className="sendButton" onClick={()=>logMe()}>Login</div>
                 <div>{msgError}</div>
         </div>
-    </div>
     )
 }
 
