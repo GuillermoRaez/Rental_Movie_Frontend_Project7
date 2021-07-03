@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router";
 import { Card } from "antd";
+import { MOVIE } from "../../redux/types";
 const { Meta } = Card;
 
+
 const Popular = (props) => {
+
+  let history = useHistory();
+
   const [moviesPopular, setMoviesPopular] = useState([]);
 
   
@@ -27,7 +33,14 @@ const Popular = (props) => {
       console.log(error);
     }
   };
+
   console.log(setMoviesPopular);
+
+  const getFilmInfo = (film) => {
+    props.dispatch({ type: MOVIE, payload: film });
+
+    history.push("/movieInfo");
+  }
 
   if (moviesPopular === "") {
     return <div>Loading</div>;
@@ -43,6 +56,7 @@ const Popular = (props) => {
                   className="imgMovie"
                   src={`${baseImgUrl}/${size}${Pop.poster_path}`}
                   alt="poster_path"
+                  onClick={getFilmInfo}
                 />
               }
             >
@@ -55,4 +69,4 @@ const Popular = (props) => {
   }
 };
 
-export default Popular;
+export default Popular

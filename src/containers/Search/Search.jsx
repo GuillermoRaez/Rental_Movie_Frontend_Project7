@@ -29,9 +29,9 @@ const Search = (props) => {
     }
 
     const searchMovies = async () => {
-        let movie = searchMovie.movieTitle;
+        let title = searchMovie.movieTitle;
 
-        let res = await axios.get('http://localhost:3001/movies/search/'+movie);
+        let res = await axios.get('http://localhost:3001/movies/search/'+title);
 
         setMovies(res.data.results)
     } 

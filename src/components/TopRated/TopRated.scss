@@ -18,6 +18,7 @@
       background-color: $secondary;
       width: 15em;
       border:solid 1em transparent;
+      cursor: pointer;
       &:hover{
         transform: scale(1.1);
         transition: 0.5s;
@@ -34,7 +35,7 @@
   .imgMovie{
     display: flex;
     size: 100%;
-    // border-radius: 1em;
+    border-radius: 1em;
     // justify-content: space-evenly;
 }
 
