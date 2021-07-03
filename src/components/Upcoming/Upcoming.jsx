@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router";
 import { Card } from "antd";
+import { MOVIE } from "../../redux/types";
+import { connect } from "react-redux";
 const { Meta } = Card;
 
 const Upcoming = (props) => {
+
+  let history = useHistory();
+
   const [moviesUpcoming, setMoviesUpcoming] = useState([]);
 
   
@@ -29,6 +35,13 @@ const Upcoming = (props) => {
   };
   console.log(setMoviesUpcoming);
 
+  const getInfo = (film) => {
+    props.dispatch({ type: MOVIE, payload: film });
+    console.log(film);
+
+    history.push("/movie");
+  }
+
   if (moviesUpcoming === "") {
     return <div>Loading</div>;
   } else {
@@ -43,6 +56,7 @@ const Upcoming = (props) => {
                className="imgMovie"
                src={`${baseImgUrl}/${size}${Up.poster_path}`}
                alt="poster_path"
+               onClick={()=> getInfo(Up)}
              />
            }
          >
@@ -55,4 +69,7 @@ const Upcoming = (props) => {
 }
 };
 
-export default Upcoming
+export default connect((state) => ({
+  credentials: state.credentials,
+  movie: state.movie,
+}))(Upcoming);

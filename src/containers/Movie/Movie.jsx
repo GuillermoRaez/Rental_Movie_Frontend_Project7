@@ -11,6 +11,16 @@ const Movie = (props) => {
       const baseImgUrl = "https://image.tmdb.org/t/p";
       const size = "w1280";
       const sizePoster = "w200";
+
+      const Rent = (movie) => {
+          try{
+              setTimeout(() => {
+                  history.push("/userorder");
+              }, 500);
+          } catch (err) {
+              console.log(err)
+          }
+      };
     
       if (props.movie !== "") {
         {
@@ -45,11 +55,10 @@ const Movie = (props) => {
                   <h4>Rated {props.movie.vote_count}</h4>
                 </div>
               </div>
-              <div className="botonAlquiler" >
+              <div className="rent" onClick={() => Rent(props.movie)}>Rent</div>
                
               </div>
             </div>
-          </div>
         );
       } else {
           <div>Loading</div>
