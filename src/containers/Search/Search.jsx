@@ -49,6 +49,7 @@ const Search = (props) => {
             <div className="searchBox">
                 <div className="movieSearch">
                     <input type="text" name="movieTitle" id="" className="search" onChange={updateSearch} placeholder="Please enter a title"/>
+                    
                 </div>
                 <div className="searchContent">
 

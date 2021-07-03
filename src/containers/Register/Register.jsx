@@ -2,9 +2,6 @@ import axios from 'axios';
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import {useHistory} from "react-router";
-import Navbar from '../../components/Navbar/Navbar';
-
-
 
 const Register = () => {
 
@@ -58,8 +55,6 @@ const Register = () => {
     }
 
     return (
-    <div>
-        <Navbar/>
         <div className="vistaRegister">
             <div className="container">
                 <div className="header">
@@ -95,7 +90,6 @@ const Register = () => {
             </div>
             </div>
         </div>
-    </div>
     )
 }
 
