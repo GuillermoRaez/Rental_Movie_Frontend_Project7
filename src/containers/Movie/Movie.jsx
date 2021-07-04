@@ -8,12 +8,14 @@ const Movie = (props) => {
     
       let history = useHistory();
 
+
       const baseImgUrl = "https://image.tmdb.org/t/p";
       const size = "w1280";
       const sizePoster = "w200";
 
       const Rent = (movie) => {
           try{
+              console.log("data that we pass to our api", props.movie)
               setTimeout(() => {
                   history.push("/userorder");
               }, 500);
@@ -28,23 +30,12 @@ const Movie = (props) => {
         }
         return (
           <div className="selectMovie">
-            <img
-              className="backdrop_path"
-              src={`${baseImgUrl}/${size}${props.movie.backdrop_path}`}
-              alt="backdrop_path"
-            ></img>
-            <div className="infoSelectMovie">
+            <img className="backdrop_path" src={`${baseImgUrl}/${size}${props.movie.backdrop_path}`} alt="backdrop_path"></img>
               <div className="imgPoster">
-                <img
-                  className="poster_path"
-                  src={`${baseImgUrl}/${sizePoster}${props.movie.poster_path}`}
-                  alt="backdrop_path"
-                ></img>
+                <img className="poster_path" src={`${baseImgUrl}/${sizePoster}${props.movie.poster_path}`} alt="backdrop_path"></img>
               </div>
               <div className="infoPoster">
-                <h2>
-                  {props.movie.title}. ({props.movie.release_date})
-                </h2>
+                <h2>{props.movie.title}. ({props.movie.release_date})</h2>
                 <div className="infoPoster2">
                   <h3>Original Title: {props.movie.original_title}</h3>
                 </div>
@@ -56,8 +47,6 @@ const Movie = (props) => {
                 </div>
               </div>
               <div className="rent" onClick={() => Rent(props.movie)}>Rent</div>
-               
-              </div>
             </div>
         );
       } else {
