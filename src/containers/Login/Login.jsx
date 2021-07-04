@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
-import Navbar from '../../components/Navbar/Navbar';
+import Sender from '../../components/Sender/Sender';
 import {connect} from 'react-redux';
 import {LOGIN} from '../../redux/types'
 
@@ -108,7 +108,7 @@ const Login = (props) => {
                 <div>{msgError.eValidate}</div>
             </div>
             <div>Are you not register yet?</div>
-            <button path="/register">Sign Up</button>
+            <Sender path="/register" destino="Sign Up"/>
         </div>
     )
 }
