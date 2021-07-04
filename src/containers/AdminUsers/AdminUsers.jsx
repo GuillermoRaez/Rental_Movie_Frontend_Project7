@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import {useHistory} from 'react-router-dom';
 
 
-const AdminUsers = () => {
+const AdminUsers = (props) => {
 
     let history = useHistory();
 

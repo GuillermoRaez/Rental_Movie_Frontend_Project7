@@ -31,8 +31,8 @@ const AdminOrders = (props) => {
         let token = props.credentials?.token;
 
         let body = {
-            userId: id,
-            id: order.id
+            userId: body.id,
+            id: body.id
         }
 
         await axios.post('http://localhost:3001/orders/delete', body, {headers:{'authorization':'Bearer ' + token}});

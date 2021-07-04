@@ -37,7 +37,7 @@ const Navbar = (props) => {
       </div>
     )
 
-    } else if(props.credentials?.token !== '') {
+    } else if(props.credentials?.user.isAdmin !== true) {
       return (
         <div className="nav">
           <div className="NavLink">
@@ -71,10 +71,10 @@ const Navbar = (props) => {
         <div className="space"></div>
         <div className="NavMenu">
             <div className="NavLink">
-              <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/users"><FontAwesomeIcon className="iconMenuLateral" icon={faUsers}/></NavLink>
+              <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/allusers"><FontAwesomeIcon className="iconMenuLateral" icon={faUsers}/></NavLink>
             </div>
             <div className="NavLink">
-              <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/orders">Orders</NavLink>
+              <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/allorders">Orders</NavLink>
             </div>
             <div className="NavLink">
             <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} onClick={()=>logOut()} to="/" id="logout">Logout</NavLink>

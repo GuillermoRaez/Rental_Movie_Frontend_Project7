@@ -5,3 +5,17 @@
     flex-direction: column;
     min-height: 100vh;
 }
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    height: 10em;
+    width: 12em;
+    background-color: $primary;
+    font-family: 'Allura';
+    color: $secondary;
+    font-size: 1.5em;
+}

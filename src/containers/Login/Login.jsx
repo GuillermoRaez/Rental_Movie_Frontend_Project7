@@ -11,12 +11,21 @@ const Login = (props) => {
 
    //Hooks
    const [credentials, setCredentials] = useState({email:'',password:''});
-   const [msgError, setMensajeError] = useState('');
+   const [msgError, setMensajeError] = useState({eEmail:'',ePassword: '',eValidate:''});
 
    //Handlers
    const updateCredentials = (e) => {
        setCredentials({...credentials,[e.target.name]: e.target.value})
    }
+
+   useEffect(() => {
+
+   }, []);
+
+   useEffect(() => {
+
+   }, []);
+
 
    const checkError = async (arg) => {
 
@@ -54,13 +63,16 @@ const Login = (props) => {
         setMensajeError('Please introduce a valid email.');
         return;
    }
+        try{
 
         let body = {
             email: credentials.email,
             password: credentials.password,
         }
         
-            try {let res = await axios.post('http://localhost:3001/login', body);
+            let res = await axios.post('http://localhost:3001/login', body);
+
+            props.dispatch({type: LOGIN, payload:res.data});
 
             let data = { 
             token: res.data.token,
@@ -73,25 +85,34 @@ const Login = (props) => {
 
             setTimeout(()=> {
             
-                history.push("/profile");
+                history.push("/");
     
             }, 750);
-        } catch (err) {
-            setMensajeError("Credentials are not correct!")
+
+        } catch {
+            setMensajeError({...msgError, eValidate: "Credentials are not correct!"})
         }
 
         }
 
     return (
         <div className="vistaLogin">
+            <div className="loginContainer">
                 <label>Email:</label>
                 <input className="inputBase"  type='email' name='email' title='email' placeholder="Email" onBlur={checkError} onChange={updateCredentials}  length='30'/>
+                <div className="errorText">{msgError.eEmail}</div>
                 <label>Password:</label>
                 <input className="inputBase"  type='password'  name='password' title='password' placeholder="Password" onBlur={checkError} onChange={updateCredentials}  length='30'/>
+                <div className="errorText">{msgError.ePassword}</div>
                 <div className="sendButton" onClick={()=>logMe()}>Login</div>
-                <div>{msgError}</div>
+                <div>{msgError.eValidate}</div>
+            </div>
+            <div>Are you not register yet?</div>
+            <button path="/register">Sign Up</button>
         </div>
     )
 }
 
-export default connect()(Login);
+export default connect((state) => ({
+    credentials: state.credentials,
+}))(Login);
