@@ -1,16 +1,24 @@
 @import 'scss/variables.scss';
-@import 'containers/Home/Home.scss';
-@import 'containers/Login/Login.scss';
+
+//Components
 @import 'components/Navbar/Navbar.scss';
-@import 'containers/Profile/Profile.scss';
 @import 'components/Userdata/Userdata.scss';
-@import 'containers/Register/Register.scss';
 @import 'components/TopRated/TopRated.scss';
 @import 'components/Popular/Popular.scss';
-@import 'containers/Order/Order.scss';
 @import 'components/Upcoming/Upcoming.scss';
+
+//Containers
+@import 'containers/Home/Home.scss';
+@import 'containers/Login/Login.scss';
+@import 'containers/Profile/Profile.scss';
+@import 'containers/Register/Register.scss';
+@import 'containers/Order/Order.scss';
 @import 'containers/Search/Search.scss';
 @import 'containers/Movie/Movie.scss';
+@import 'containers/AdminOrders/AdminOrders.scss';
+@import 'containers/AdminUsers/AdminUsers.scss';
+
+
 
 .App {
     height: 150vh;
