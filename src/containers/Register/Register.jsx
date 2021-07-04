@@ -56,11 +56,10 @@ const Register = () => {
 
     return (
         <div className="vistaRegister">
-            <div className="container">
+            <div className="form" id="form">
                 <div className="header">
                 <h2>Create Account</h2>
                 </div>
-            <div className="form" id="form">
                 <label>Firstname:</label>
                 <input className="inputBaseone" type="text" name="firstname" 
                 onChange={updateFormulario} placeholder="Firstname"></input>
@@ -89,7 +88,6 @@ const Register = () => {
                 <div className="sendButton" onClick={()=>ejecutaRegistro()}>Enviar</div>
             </div>
             </div>
-        </div>
     )
 }
 

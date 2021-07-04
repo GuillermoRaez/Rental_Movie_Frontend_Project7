@@ -1,0 +1,82 @@
+.moviePage {
+    background-color: $secondary;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    height: 80%;
+    width: 100%;
+    .movieInfo {
+      display: flex;
+      align-items: center;
+
+      top: 23vw;
+      background-color: $primary;
+      z-index: 1;
+      border-radius: 1em;
+  
+      .poster_path {
+        margin-left: 1.5em;
+        border-radius: 0.3em;
+        z-index: 4;
+      }
+      .infoPoster {
+        padding-left: 0.5em;
+        width: 45em;
+        color: rgb(200, 200, 200);
+        .infoPoster2 {
+          align-items: flex-start;
+  
+          width: 45em;
+        }
+        .infoPoster3 {
+          align-items: flex-start;
+          padding-bottom: 2em;
+        }
+        .infoPoster4 {
+          align-items: flex-start;
+  
+          width: 10em;
+        }
+      }
+    }
+  
+    .infoPoster {
+  
+      padding-left: 1em;
+      width: 45em;
+      color: rgb(200, 200, 200);
+      .infoPoster2 {
+        align-items: flex-start;
+  
+        width: 45em;
+      }
+      .infoPoster3 {
+        align-items: flex-start;
+  
+      }
+      .infoPoster4 {
+        align-items: flex-start;
+        width: 10em;
+      }
+    }
+    .rent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: solid 1px $secondary;
+      border-radius: 2em;
+      width: 7em;
+      height: 4em;
+      color: $secondary;
+      font-family: "Allura";
+      font-size: 1em;
+      &:hover {
+        transition: 0.5s;
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+    }
+  }
+

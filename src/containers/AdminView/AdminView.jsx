@@ -29,4 +29,4 @@ const AdminView = (props) => {
     )
 }
 
-export default AdminView
+export default AdminView;
