@@ -69,7 +69,7 @@ const Navbar = (props) => {
           <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/" id="title">Blooper</NavLink>
         </div>
         <div className="NavLink">
-          <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/admin" id="title"><FontAwesomeIcon className="iconic" icon={faCrown}/></NavLink>
+          <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/admin" id="crown"><FontAwesomeIcon className="iconic" icon={faCrown}/></NavLink>
         </div>
         <div className="space"></div>
         <div className="NavMenu">

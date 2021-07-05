@@ -51,7 +51,7 @@ const AdminOrders = (props) => {
                     <div className="orderBoxes">
                     {allorders.map((order, index) => (
                         <Card key={index} className="OrderCards">
-                            <div onClick={() => deleteOrder(order)} className="deletebutton"></div>
+                            <div onClick={() => deleteOrder(order)} className="delete">Delete</div>
                             <p>User: {order.userId}</p>
                             <p>MovieId: {order.movieId}</p>
                             <p>Movie: {order.movieTitle}</p>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { connect } from "react-redux";
 import {useHistory} from 'react-router-dom';
+import moment from 'moment';
 
 
 const AdminUsers = (props) => {
@@ -32,35 +33,39 @@ const AdminUsers = (props) => {
 
             console.log(error);
         }
+
     }
 
     const deleteUser = async (user) => {
 
-        let token = props.credentials?.token;
-        let id = user.id
-
-        let body = {
-            userId: id
+            let token = props.credentials?.token;
+            let id = user.id;
+    
+            let body = {
+                userId : id
+            }
+    
+            await axios.post('http://localhost:3006/users/deleteuser', body, {headers:{'authorization':'Bearer ' + token}})
+    
+            window.location.reload();
+    
         }
 
-        await axios.post('http://localhost:3001/users/delete', body, {headers:{'authorization':'Bearer ' + token}})
-
-        window.location.reload();
-
-    }
 
     if (props.credentials?.user.isAdmin === true) {
         return (
-
             <div className="adminUsersContainer">
+                <h1 className="usersh1">Users</h1>
                 <div className="UsersContent">
                     {allusers.map((user, index) => (
                         <div key={index} className="UserCards">
+                            <div onClick={() => deleteUser(user)} className="delete">Delete</div>
+                            <p>Id: {user.id}</p>
                             <p>Name: {user.firstname}</p>
                             <p>Lastname: {user.lastname}</p>
                             <p>Email: {user.email}</p>
                             <p>Phone: {user.phone}</p>
-                            <p>Birthday: {user.birthday}</p>
+                            <p>Birthday: {moment(user.birthday).format("LL")}</p>
                             <p>Address: {user.address}</p>
                         </div>
                     ))}

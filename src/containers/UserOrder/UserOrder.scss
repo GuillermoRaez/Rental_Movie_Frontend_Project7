@@ -6,11 +6,25 @@
 
 .userOrdersContent {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 
     margin-left:1em;
     margin-right: 1em;
+}
+
+.delete {
+    height: 1.5em;
+    width: 3em;
+    color: $tertiary;
+    border: 1px solid red;
+    background-color: red;
+    border-radius: 0.1em;
+}
+
+.delete:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .meOrders {
