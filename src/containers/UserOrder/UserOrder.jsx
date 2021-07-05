@@ -4,11 +4,15 @@ import { useHistory } from 'react-router';
 import axios from 'axios';
 import { MOVIE } from '../../redux/types';
 import { Card } from 'antd';
+import moment from 'moment';
 
 
 const UserOrder = (props) => {
     
     let history = useHistory()
+
+    const baseImgUrl = "https://image.tmdb.org/t/p";
+    const sizePoster = "w200";
 
     const [ orders, setOrders ] = useState([]);
 
@@ -69,16 +73,16 @@ const UserOrder = (props) => {
 
         return(
             <div className="userOrderContainer">
-                <h1>Hello there</h1>
+                <h1 className="meOrders">My Orders</h1>
                 <div className="userOrdersContent">
-                    
+                
                         {orders.map((order, index) => {
                             return (
                             <div key={index} className="AllOrderCards">
-                                {props.orders}
-                                {/* {props.orders.movieId}
-                                {props.orders.movieTitle} */}
-                                
+                                <img className="poster_path" src={`${baseImgUrl}/${sizePoster}${order.moviePoster}`} alt="poster"></img>
+                                <p className="movierented">Movie ID:{order.movieId}</p>
+                                <p className="movierented">Movie:{order.movieTitle}</p>
+                                <p className="movierented">Rented:{moment(order.createdAt).format("LL")}</p>
                             </div>
                         )})}
                     
