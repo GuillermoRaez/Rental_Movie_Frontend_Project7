@@ -18,9 +18,25 @@ This is the minimal version product that is required to make, in order to be in 
 
 We have made the minimal requisites, but the main job is not done yet.
 
+## Upcoming Works
+
+- Optional genre bar
+- Search by actor
+- Enable the data "price" in movies.
+- Continue the prerequisites of updating the CSS.
+
 ## Status
 
 - 60% Completed
+
+## Tools 
+
+- HTML5
+- CSS3
+- JAVASCRIPT
+- REACT
+- REDUX
+- SASS
 
 ## Thanks
 
