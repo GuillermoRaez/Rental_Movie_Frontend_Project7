@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { identifier } from '@babel/types';
-import orderReducer from '../../redux/reducers/order-reducer';
+import { Card } from 'antd';
+
 
 
 const AdminOrders = (props) => {
@@ -45,15 +45,20 @@ const AdminOrders = (props) => {
 
         return(
             <div className="AdminOrdersContainer">
-                <div className="adminInfo allUsersContent">
+                <div className="adminInfo">
+                    <h1>Something is not adding up here!</h1>
+                    <p>Find the root of the issue</p>
+                    <div className="orderBoxes">
                     {allorders.map((order, index) => (
-                        <div key={index} className="OrderCards">
+                        <Card key={index} className="OrderCards">
                             <div onClick={() => deleteOrder(order)} className="deletebutton"></div>
-                            <p>User: {allorders.userId}</p>
-                            <p>Movie: {allorders.movieId},{allorders.movieTitle}</p>
-                            <p>Rented: {allorders.createdAt}</p>
-                        </div>
+                            <p>User: {order.userId}</p>
+                            <p>MovieId: {order.movieId}</p>
+                            <p>Movie: {order.movieTitle}</p>
+                            <p>Rented: {order.createdAt}</p>
+                        </Card>
                     ))}
+                    </div>
                 </div>
             </div>
         )
