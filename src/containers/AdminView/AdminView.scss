@@ -1,0 +1,33 @@
+.adminViewContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .adminViewContent{
+        background-color: $primary;
+        color: $secondary;
+        font-family: 'Allura';
+
+        border-radius: 0.1em;
+    }
+    .adminBoard {
+        margin: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .SelfLove {
+            font-size: 40px;
+            font: bold;
+        }
+        .SelfLoathing {
+            font-size: 36px;
+        }
+    }
+    .adminBody {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 1em;
+    }
+}

@@ -14,25 +14,30 @@
       top: 23vw;
       background-color: $primary;
       z-index: 1;
-      border-radius: 1em;
-  
+      border-radius: 0.5em;
+    }
+  }
       .poster_path {
-        margin-left: 1.5em;
+        margin: 1em;
+        // margin-left: 1em;
+        // margin-right:1em;
         border-radius: 0.3em;
         z-index: 4;
       }
       .infoPoster {
-        padding-left: 0.5em;
-        width: 45em;
+        width: 30em;
         color: rgb(200, 200, 200);
+        .title{
+          margin: 0.5em 0 0 0;
+        }
         .infoPoster2 {
           align-items: flex-start;
   
-          width: 45em;
+          width: 30em;
         }
         .infoPoster3 {
-          align-items: flex-start;
-          padding-bottom: 2em;
+          display: flex;
+          align-items: center;
         }
         .infoPoster4 {
           align-items: flex-start;
@@ -40,43 +45,24 @@
           width: 10em;
         }
       }
-    }
   
-    .infoPoster {
-  
-      padding-left: 1em;
-      width: 45em;
-      color: rgb(200, 200, 200);
-      .infoPoster2 {
-        align-items: flex-start;
-  
-        width: 45em;
-      }
-      .infoPoster3 {
-        align-items: flex-start;
-  
-      }
-      .infoPoster4 {
-        align-items: flex-start;
-        width: 10em;
-      }
-    }
     .rent {
       display: flex;
       justify-content: center;
       align-items: center;
       border: solid 1px $secondary;
       border-radius: 2em;
-      width: 7em;
-      height: 4em;
+      width: 3em;
+      height: 3em;
       color: $secondary;
       font-family: "Allura";
-      font-size: 1em;
+      font-size: 1.5em;
+      margin: 1em;
       &:hover {
         transition: 0.5s;
         transform: scale(1.05);
         cursor: pointer;
       }
     }
-  }
+  
 

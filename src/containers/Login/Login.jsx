@@ -59,10 +59,6 @@ const Login = (props) => {
    const logMe = async () => {
     
 
-    if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(credentials.email) ) {
-        setMensajeError('Please introduce a valid email.');
-        return;
-   }
         try{
 
         let body = {
@@ -98,17 +94,20 @@ const Login = (props) => {
     return (
         <div className="vistaLogin">
             <div className="loginContainer">
+                <div className="header">
+                    <h2>Please Sign In</h2>
+                </div>
                 <label>Email:</label>
-                <input className="inputBase"  type='email' name='email' title='email' placeholder="Email" onBlur={checkError} onChange={updateCredentials}  length='30'/>
+                <input className="inputBase"  type='email' name='email' title='email' placeholder="Email" onBlur={()=>checkError("email")} onChange={updateCredentials}  length='30' required/>
                 <div className="errorText">{msgError.eEmail}</div>
                 <label>Password:</label>
-                <input className="inputBase"  type='password'  name='password' title='password' placeholder="Password" onBlur={checkError} onChange={updateCredentials}  length='30'/>
+                <input className="inputBase"  type='password'  name='password' title='password' placeholder="Password" onBlur={()=>checkError("email")} onChange={updateCredentials}  length='30' required/>
                 <div className="errorText">{msgError.ePassword}</div>
-                <div className="sendButton" onClick={()=>logMe()}>Login</div>
-                <div>{msgError.eValidate}</div>
+                <div className="SignIn" onClick={()=>logMe()}>Login</div>
+                <div className="errorText">{msgError.eValidate}</div>
+                <div className="register">Not registered yet?</div>
+            <Sender className="signUp" path="/register" destino="Sign Up"/>
             </div>
-            <div>Are you not register yet?</div>
-            <Sender path="/register" destino="Sign Up"/>
         </div>
     )
 }

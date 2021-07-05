@@ -15,8 +15,8 @@ const AdminView = (props) => {
                         <p className="SelfLoathing">What would you like to do, today?</p>
                     </div>
                     <div className="adminBody">
-                        <Sender path="/allusers" destination="All Users"/>
-                        <Sender path="/allorders" destination="All Orders"/>
+                        <Sender path="/allusers" destination="All Users">Users</Sender>
+                        <Sender path="/allorders" destination="All Orders">Orders</Sender>
                     </div>
                 </div>
             </div>
@@ -24,9 +24,11 @@ const AdminView = (props) => {
     }
     return (
         <div>
-            
+            <h1>Something is fishy!</h1>
         </div>
     )
 }
 
-export default AdminView;
+export default connect((state) => ({
+    credentials: state.credentials,
+}))(AdminView);

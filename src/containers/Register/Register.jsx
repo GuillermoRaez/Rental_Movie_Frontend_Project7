@@ -83,12 +83,10 @@ const Register = () => {
                 <input className="inputBaseone" type="password" name="password" 
                 onChange={updateFormulario} placeholder="Password"></input>
     
-    
-                
                 <div className="sendButton" onClick={()=>ejecutaRegistro()}>Enviar</div>
             </div>
             </div>
     )
 }
 
-export default connect()(Register);
+export default Register;

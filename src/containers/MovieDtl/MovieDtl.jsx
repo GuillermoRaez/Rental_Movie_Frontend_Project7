@@ -3,6 +3,8 @@ import axios from 'axios';
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import moment from "moment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 
 const MovieDtl = (props) => {
@@ -38,6 +40,10 @@ const MovieDtl = (props) => {
            headers: { authorization: "Bearer " + token }
            });
 
+           setTimeout(() => {
+             history.push("/myorder")
+           }, 500)
+
           } catch (err) {
               console.log(err)
           }
@@ -54,7 +60,7 @@ const MovieDtl = (props) => {
                 <img className="poster_path" src={`${baseImgUrl}/${sizePoster}${props.movie.poster_path}`} alt="backdrop_path"></img>
               </div>
               <div className="infoPoster">
-                <h2>{props.movie.title}</h2>
+                <h2 className="title">{props.movie.title}</h2>
                 <h3>{moment(props.movie.release_date).format("LL")}</h3>
                 <div className="infoPoster2">
                   <h3>Original Title: {props.movie.original_title}</h3>
@@ -63,7 +69,7 @@ const MovieDtl = (props) => {
                   <h3>Synopsis: {props.movie.overview}</h3>
                 </div>
                 <div className="infoPoster4">
-                  <h4>Rated {props.movie.vote_count}</h4>
+                  <h4>{props.movie.vote_average} <FontAwesomeIcon className="iconMenuLateral" icon={faStar}/></h4>
                 </div>
               </div>
               <div className="rent" onClick={() => Rent(props.movie)}>Rent</div>

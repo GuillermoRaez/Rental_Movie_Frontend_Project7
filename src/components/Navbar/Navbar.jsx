@@ -4,7 +4,7 @@ import { LOGOUT } from '../../redux/types'
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faCrown, faSearch, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = (props) => {
 
@@ -44,11 +44,11 @@ const Navbar = (props) => {
             <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/" id="title">Blooper</NavLink>
           </div>
           <div className="NavLink">
-            <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/movies" id="movies">Movies</NavLink>
+            <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/myorder" id="userorder">My Orders</NavLink>
           </div>
           <div className="NavLink">
             <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/search" id="movies">
-              <FontAwesomeIcon className="iconMenuLateral" icon={faSearch}/>
+              <FontAwesomeIcon icon={faSearch}/>
             </NavLink>
           </div>
           <div className="space"></div>
@@ -67,6 +67,9 @@ const Navbar = (props) => {
       <div className="nav">
          <div className="NavLink">
           <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/" id="title">Blooper</NavLink>
+        </div>
+        <div className="NavLink">
+          <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to="/admin" id="title"><FontAwesomeIcon className="iconic" icon={faCrown}/></NavLink>
         </div>
         <div className="space"></div>
         <div className="NavMenu">
