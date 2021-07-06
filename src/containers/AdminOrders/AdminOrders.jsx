@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Card } from 'antd';
+import moment from 'moment';
 
 
 
 const AdminOrders = (props) => {
 
     const [allorders, setAllOrders] = useState([]);
+
+    const baseImgUrl = "https://image.tmdb.org/t/p";
+    const sizePoster = "w200";
 
     useEffect(() => {
         findAllUserOrders();
@@ -45,22 +48,20 @@ const AdminOrders = (props) => {
 
         return(
             <div className="AdminOrdersContainer">
-                <div className="adminInfo">
-                    <h1>Something is not adding up here!</h1>
-                    <p>Find the root of the issue</p>
+                    <h1 className="usersh1">All Orders</h1>
                     <div className="orderBoxes">
                     {allorders.map((order, index) => (
-                        <Card key={index} className="OrderCards">
-                            <div onClick={() => deleteOrder(order)} className="delete">Delete</div>
+                        <div key={index} className="OrderCards">
+                            <div onClick={() => deleteOrder(order)} className="delete">Cancel</div>
+                            <img className="poster_path" src={`${baseImgUrl}/${sizePoster}${order.moviePoster}`} alt="poster"></img>
                             <p>User: {order.userId}</p>
                             <p>MovieId: {order.movieId}</p>
                             <p>Movie: {order.movieTitle}</p>
-                            <p>Rented: {order.createdAt}</p>
-                        </Card>
+                            <p>Rented: {moment(order.createdAt).format("LL")}</p>
+                        </div>
                     ))}
                     </div>
                 </div>
-            </div>
         )
     } else {
         return (

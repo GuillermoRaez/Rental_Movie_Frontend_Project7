@@ -19,7 +19,7 @@ const TopRated = (props) => {
   useEffect(() => {
     setTimeout(() => {
       findTopRated();
-    }, 250);
+    }, 100);
   }, []);
 
   const findTopRated = async () => {

@@ -19,7 +19,7 @@ const Upcoming = (props) => {
   useEffect(() => {
     setTimeout(() => {
       findUpcoming();
-    }, 250);
+    }, 100);
   }, []);
 
   const findUpcoming = async () => {

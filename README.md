@@ -1,6 +1,6 @@
 # Blooper Movie Rental
 
-This project was made by [https://github.com/GuillermoRaez](Guillermo Raez), student at GeeksHubs Academy.
+This project was made by [Guillermo Raez](https://github.com/GuillermoRaez), student at GeeksHubs Academy.
 
 ## The project. 🔧
 

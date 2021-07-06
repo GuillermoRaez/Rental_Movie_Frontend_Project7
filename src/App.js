@@ -9,7 +9,7 @@ import Search from './containers/Search/Search';
 import Navbar from './components/Navbar/Navbar';
 import AdminOrders from './containers/AdminOrders/AdminOrders';
 import AdminUsers from './containers/AdminUsers/AdminUsers';
-import AdminView from './containers/AdminView/AdminView';
+import AdminGod from './containers/AdminGod/AdminGod';
 import MovieDtl from './containers/MovieDtl/MovieDtl';
 import UserOrder from './containers/UserOrder/UserOrder';
 
@@ -32,7 +32,7 @@ function App() {
           <Route path="/search" exact component={Search}/>
           <Route path="/allorders" exact component={AdminOrders}/>
           <Route path="/allusers" exact component={AdminUsers}/>
-          <Route path="/admin" exact component={AdminView}/>
+          <Route path="/admin" exact component={AdminGod}/>
 
         </Switch>
 

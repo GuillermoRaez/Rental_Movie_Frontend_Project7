@@ -55,9 +55,10 @@ const MovieDtl = (props) => {
         }
         return (
           <div className="moviePage">
+            {/* <img className="backdrop_path" src={`${baseImgUrl}/${size}${props.movie.backdrop_path}`} alt ="backdrop_path"></img> */}
             <div className="movieInfo">
               <div className="imgPoster">
-                <img className="poster_path" src={`${baseImgUrl}/${sizePoster}${props.movie.poster_path}`} alt="backdrop_path"></img>
+                <img className="poster_path" src={`${baseImgUrl}/${sizePoster}${props.movie.poster_path}`} alt="poster_path"></img>
               </div>
               <div className="infoPoster">
                 <h2 className="title">{props.movie.title}</h2>

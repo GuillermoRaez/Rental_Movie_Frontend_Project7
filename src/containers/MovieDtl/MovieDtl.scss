@@ -1,9 +1,11 @@
 .moviePage {
     background-color: $secondary;
-    position: absolute;
+    // position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
     left: 0;
     height: 80%;
     width: 100%;
@@ -14,9 +16,15 @@
       top: 23vw;
       background-color: $primary;
       z-index: 1;
-      border-radius: 0.5em;
+      border-radius: 0.1em;
     }
   }
+      // .backdrop_path {
+      //   opacity
+      //   width: 100%;
+      //   height: 70%;
+      // }
+
       .poster_path {
         margin: 1em;
         // margin-left: 1em;
@@ -51,7 +59,7 @@
       justify-content: center;
       align-items: center;
       border: solid 1px $secondary;
-      border-radius: 2em;
+      border-radius: 0.1em;
       width: 3em;
       height: 3em;
       color: $secondary;

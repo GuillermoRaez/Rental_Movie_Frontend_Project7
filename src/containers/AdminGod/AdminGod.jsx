@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Sender from '../../components/Sender/Sender';
 
 
-const AdminView = (props) => {
+const AdminGod = (props) => {
 
     if (props.credentials?.user.isAdmin === true) {
 
@@ -31,4 +31,4 @@ const AdminView = (props) => {
 
 export default connect((state) => ({
     credentials: state.credentials,
-}))(AdminView);
+}))(AdminGod);

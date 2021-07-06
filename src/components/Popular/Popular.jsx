@@ -20,7 +20,7 @@ const Popular = (props) => {
   useEffect(() => {
     setTimeout(() => {
       findPopular();
-    }, 250);
+    }, 100);
   }, []);
 
   const findPopular = async () => {
