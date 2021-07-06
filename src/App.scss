@@ -1,0 +1,27 @@
+@import 'scss/variables.scss';
+
+//Components
+@import 'components/Navbar/Navbar.scss';
+@import 'components/Userdata/Userdata.scss';
+@import 'components/TopRated/TopRated.scss';
+@import 'components/Popular/Popular.scss';
+@import 'components/Upcoming/Upcoming.scss';
+@import 'components/Sender/Sender.scss';
+
+//Containers
+@import 'containers/Home/Home.scss';
+@import 'containers/Login/Login.scss';
+@import 'containers/Profile/Profile.scss';
+@import 'containers/Register/Register.scss';
+@import 'containers/UserOrder/UserOrder.scss';
+@import 'containers/Search/Search.scss';
+@import 'containers/MovieDtl/MovieDtl.scss';
+@import 'containers/AdminOrders/AdminOrders.scss';
+@import 'containers/AdminUsers/AdminUsers.scss';
+@import 'containers/AdminGod/AdminGod.scss';
+
+
+.App {
+    height: 150vh;
+    background-color: $secondary;
+}
