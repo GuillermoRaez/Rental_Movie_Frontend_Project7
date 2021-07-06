@@ -25,7 +25,7 @@ const TopRated = (props) => {
   const findTopRated = async () => {
     try {
       let res = await axios.get(
-        "http://localhost:3001/movies/toprated"
+        "https://blooper-movie-rental-front.herokuapp.com/movies/toprated"
       );
       setMoviesTopRate(res.data.results);
       console.log(res.data.results);
